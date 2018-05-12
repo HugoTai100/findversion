@@ -64,6 +64,9 @@ func getVersionArray(username, repo string)([]*semver.Version) {
 	}
 	return allReleases
 }
+func mapVersions(releases []*semver.Version, versionSlice []*semver.Version,  minVersion *semver.Version)[]*semver.Version {
+	return LatestVersions(releases, minVersion)
+}
 func main() {
 	if(len(os.Args) > 1){
 		inFile, _ := os.Open(os.Args[1])
