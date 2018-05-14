@@ -83,13 +83,5 @@ func main() {
 			versionSlice := LatestVersions(allReleases, minVersion)
 			fmt.Printf("latest versions of %s/%s: %s\n",line1[:i1],line1[i1+1:i2], versionSlice)
 		}
-	} else {
-		versione:= []string{"1.8.11", "1.9.6", "1.10.1-a+12", "1.10.1-12", "1.9.5", "1.8.10", "1.10.0", "1.7.14", "1.8.9", "1.9.5"}
-		allReleases := make([]*semver.Version, len(versione))
-		for i := 0; i < len(versione); i++ {
-			allReleases[i] = semver.New(versione[i])
-		}
-		minVersion := semver.New("1.8.12")
-		fmt.Println(LatestVersions(allReleases, minVersion))
 	}
 }
